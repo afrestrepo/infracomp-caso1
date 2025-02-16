@@ -1,9 +1,20 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int numProductores = 3;
-        int numEquiposCalidad = 3;
-        int totalMeta = 10;
-        int limiteBuzonRevision = 5;
+        Scanner consola = new Scanner(System.in);
+
+        System.out.print("Ingrese el numero de productores: ");
+        int numProductores = consola.nextInt();
+
+        System.out.print("Ingrese el numero de equipos de calidad: ");
+        int numEquiposCalidad = consola.nextInt();
+
+        System.out.print("Ingrese la meta total de productos: ");
+        int totalMeta = consola.nextInt();
+
+        System.out.print("Ingrese el límite del buzon de revision: ");
+        int limiteBuzonRevision = consola.nextInt();
 
         BuzonRevision buzonRevision = new BuzonRevision(limiteBuzonRevision);
         BuzonReproceso buzonReproceso = new BuzonReproceso();
