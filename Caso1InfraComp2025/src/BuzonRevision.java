@@ -14,7 +14,7 @@ public class BuzonRevision {
             System.out.println("Buzon lleno, productor " + id + " esperando ");
             wait();
         }
-        System.out.println("Productor " + id + " agrego el producto al buzon de revision " + producto.getId());     
+        System.out.println("Productor " + id + " agrego el producto " + producto.getId() + " al buzon de revision " );     
         productos.add(producto);        
     }
 

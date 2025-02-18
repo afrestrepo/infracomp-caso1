@@ -25,7 +25,7 @@ public class EquipoCalidad extends Thread {
         while (!fin) {
             while (buzonRevision.estaVacio() && deposito.getTotal() < totalMeta) {
                 try {
-                    System.out.println("Buzon vacio, Equipo de calidad " + id + " esperando.");
+                    System.out.println("Buzon vacio, Equipo de calidad " + id + " esperando ");
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
@@ -33,6 +33,7 @@ public class EquipoCalidad extends Thread {
                 }
             }
             Producto producto = buzonRevision.tomar();
+            System.out.println("Equipo de calidad " + id + " revisando el producto " + producto.getId());
             synchronized (deposito) {
 
                 if (deposito.getTotal() >= totalMeta) {
@@ -45,6 +46,7 @@ public class EquipoCalidad extends Thread {
                 }
             }
             if (buzonRevision.estaVacio() && deposito.getTotal() >= totalMeta) {
+                System.out.println("Equipo de calidad " + id + " termina su ejecución ");
                 fin = true;
                 break;
             }
@@ -68,3 +70,4 @@ public class EquipoCalidad extends Thread {
         }
     }
 }
+

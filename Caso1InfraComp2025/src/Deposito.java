@@ -11,7 +11,7 @@ public class Deposito {
         this.total = 0;
     }
 
-    public synchronized void agregar(Producto producto) {
+    public void agregar(Producto producto) {
         productos.add(producto);
         total++;
         System.out.println("Producto " + producto.getId() + " en el deposito, " + total + " productos en total.---------------------------");
